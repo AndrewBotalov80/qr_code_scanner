@@ -318,7 +318,8 @@ class QRViewController {
 
   /// Stops the camera and disposes the barcode stream.
   void dispose() {
-    if (defaultTargetPlatform == TargetPlatform.iOS) stopCamera();
+    // if (defaultTargetPlatform == TargetPlatform.iOS)
+    stopCamera();
     _scanUpdateController.close();
   }
 
