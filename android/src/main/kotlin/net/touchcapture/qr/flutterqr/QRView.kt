@@ -13,6 +13,7 @@ import com.google.zxing.ResultPoint
 import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.BarcodeView
+import com.journeyapps.barcodescanner.camera.CenterCropStrategy
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -209,8 +210,8 @@ class QRView(messenger: BinaryMessenger, id: Int, private val params: HashMap<St
                 checkAndRequestPermission(null)
             }
         }
-        barcodeView?.setUseTextureView(false)
-        barcodeView?.setPreviewScalingStrategy(CenterCropStrategy())
+        barcodeView?.isUseTextureView = false
+        barcodeView?.previewScalingStrategy = CenterCropStrategy()
         return barcodeView
     }
 
