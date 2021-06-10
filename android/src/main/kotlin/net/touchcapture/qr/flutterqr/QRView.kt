@@ -209,6 +209,8 @@ class QRView(messenger: BinaryMessenger, id: Int, private val params: HashMap<St
                 checkAndRequestPermission(null)
             }
         }
+        barcodeView?.setUseTextureView(false)
+        barcodeView?.setPreviewScalingStrategy(CenterCropStrategy())
         return barcodeView
     }
 
